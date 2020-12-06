@@ -1,0 +1,20 @@
+const mongoose = require('mongoose');
+
+require("dotenv").config();
+
+// Connect to Mongo
+const connectDB = async () => {
+    try {
+        const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/my-inventory', {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useUnifiedTopology: true
+        });
+        console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+    } catch (err) {
+        console.log(`Error: ${err.message}`.red);
+        process.exit(1);
+    }
+} 
+
+module.exports = connectDB;

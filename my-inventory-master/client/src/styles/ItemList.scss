@@ -1,0 +1,93 @@
+$mainColor: #f4f4f4;
+
+$screen-sm-max: 426px;
+
+$screen-md-min: 768px;
+$screen-xs-max: 576px; 
+
+$screen-mmd-max: 1024px;
+$screen-xmmd-min: 768px;
+
+$screen-six-min: 632px;
+$screen-seven-max: 768px;
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+}
+
+@mixin mdd {
+  @media (min-width: #{$screen-xmmd-min}) and (max-width: #{$screen-mmd-max}) {
+    @content;
+  }
+}
+
+@mixin six {
+  @media (max-width: #{$screen-seven-max}) {
+    @content;
+  }
+}
+
+.inventory-text {
+  font-size: 1.3rem;
+}
+
+.item-list {
+  margin: 1.2rem;
+}
+
+.singleItem {
+  background-color: $mainColor;
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
+  border-radius: 5px;
+
+  @include md {
+    margin: 0 5rem;
+  }
+
+  @include xs {
+    width: 90% !important;
+  }
+
+}
+
+.card {
+  width: 8rem;
+  height: 8rem;
+  margin: auto;
+  @include six {
+    margin-top: 1rem;
+  }
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;  
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 50% !important;
+
+  @include mdd {
+    width: 80% !important;
+  }
+
+  @include sm {
+    width: 70% !important;
+  }
+}

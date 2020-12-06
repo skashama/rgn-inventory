@@ -1,0 +1,211 @@
+$screen-xsm-max: 321px;
+
+$screen-xsl-max: 376px;
+$screen-xs-max: 426px;
+
+$screen-md-min: 426px; 
+$screen-md-max: 768px;
+
+
+$screen-xmmd-min: 768px;
+$screen-mmd-max: 940px;
+
+$screen-six-min: 632px;
+$screen-seven-max: 767px;
+
+
+@mixin xsm {
+  @media (max-width: #{$screen-xsm-max}) {
+    @content;
+  }
+}
+
+@mixin xsd {
+  @media (min-width: #{$screen-xsm-max}) and (max-width: #{$screen-xsl-max}) {
+    @content;
+  }
+}
+
+@mixin xsh {
+  @media (min-width: #{$screen-xsl-max}) and (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+}
+
+@mixin xsl {
+  @media (min-width: #{$screen-xsm-max}) and (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max})  {
+    @content;
+  }
+}
+
+
+@mixin mdd {
+  @media (min-width: #{$screen-xmmd-min}) and (max-width: #{$screen-mmd-max}) {
+    @content;
+  }
+}
+
+@mixin six {
+  @media (min-width: #{$screen-six-min}) and (max-width: #{$screen-seven-max}) {
+    @content;
+  }
+}
+
+
+.App {
+  text-align: center;
+}
+
+.form-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;  
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 50% !important;
+
+    @include md {
+      width: 60% !important;
+    }
+
+    @include xs {
+      width: 70% !important;
+    }
+}  
+
+input[type=text], input[type=number], input[type=email], input[type=password]  {   
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    padding: 12px;
+    resize: vertical;
+    width: 65%;  
+
+    @include md {
+      padding: 10px;
+      width: 85%;
+    }
+
+    @include xs {
+      width: 90%;
+      padding: 10px;
+    }
+  }
+
+  input[type=submit] {  
+    background:#ccc; 
+    border:0 none;
+    border-radius: 5px;
+    cursor:pointer;
+    padding:5px 15px; 
+    -webkit-border-radius: 5px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+.cta_button {
+  background-color: #007bff;
+  margin-right: 8px;
+  display: inline-block;
+  font-weight: 400;
+
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  margin-top: 1rem;
+}
+
+.cta_button a {
+  color: #fff;
+}
+
+.cta_button a:hover {
+  text-decoration: none;
+}
+
+.welcome_container {
+  height: 200px;
+  position: relative;
+  border: 3px solid #dee2e6;
+
+  @include xs {
+    height: 300px;
+    width: 80% !important;
+  }
+}
+
+.welcome_content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.welcome_text {
+  font-size: 24px;
+  font-weight: 600;
+  width: max-content;
+
+  @include xsm {
+    font-size: 13px;
+    font-weight: 640;
+  }
+
+  @include xsl {
+    font-size: 15px;
+    font-weight: 640;
+  }
+}
+
+.alert_modal {
+  width: 61%;
+  margin: auto;
+
+  @include md {
+    width: 77%;
+    margin: auto;
+  }
+
+  @include xsh {
+    width: 75%;
+    margin: auto;
+  }
+
+  @include xsd {
+    width: 86%;
+    margin: auto;
+  }
+
+  @include xsm {
+    width: 70%;
+    margin: auto;
+  }
+
+}
+
+.backtoArrow {
+  color: black;
+}

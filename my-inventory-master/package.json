@@ -1,0 +1,46 @@
+{
+  "name": "rgn-inventory",
+  "version": "1.0.0",
+  "description": "Backend for my inventory",
+  "main": "server.js",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "postinstall": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass@4.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skashama/rgn-inventory.git"
+  },
+  "author": "Shaloom Kashama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skashama/rgn-inventory/issues"
+  },
+  "homepage": "https://github.com/skashama/rgn-inventory#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0",
+    "react-scripts": "^4.0.0",
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
